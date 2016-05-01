@@ -70,22 +70,32 @@ print();
       input();
     }
     else{
-
+      k++;
       placement(row,colum);
+
     }
 
   }
 
-
-
-
-
-
-
 int main(void){
   playboard();
   print();
-  input();
+
+  while(a<1){
+    a++ ;
+    printf("DO YOU WANT TO continue? (Y/N):" );
+    scanf("%c",&q );
+    if (q == 'N' || q == 'n'){
+      a = 1;
+      printf("STOPPING\n");
+    }
+    else if(q == 'Y' || q == 'y'){
+      a = 0;
+      printf("AAAAA\n");
+    }
+
+  }
+
 
 
   return 0;
