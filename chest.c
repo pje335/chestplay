@@ -26,27 +26,24 @@ void print(){
 
 /*Placing a 1 for the chosen positon and plpacing 5 for all invalid places*/
 void placement(row,colum){
-
-      board[row][colum] = 1;
+  board[row][colum] = 1;
   for(x=0; x<8;x++){
     if(board[row][x] != 1){
-      board[row][x] = 5;
-    }
-  }
-  for(x=0; x<8;x++){
+      board[row][x] = 5;}
     if(board[x][colum] != 1){
-      board[x][colum] = 5;
-    }
+      board[x][colum] = 5;}
+    if(board[row+x][colum+x] != 1 && row-x <= 7 && colum-x <= 7 ){
+      board[row+x][colum+x] = 5;}
+    if(board[row-x][colum-x] != 1 && row-x >= 0 && colum-x >= 0 ){
+      board[row-x][colum-x] = 5;}
+    if(board[row-x][colum+x] != 1 && colum+x >= 0 && row-x >= 0 ){
+      board[row-x][colum+x] = 5;}
+    if(board[row+x][colum+x] != 1 && colum-x >= 0 && row+x >= 0 ){
+      board[row+x][colum-x] = 5;}
   }
-
-  for(x=0; x<8;x++){
-    if(board[x][x] != 1){
-      board[x][x] = 5;
-    }
-  }
-
-  print();
+print();
 }
+
 
 
 /*asking the user for input*/
@@ -88,9 +85,8 @@ void placement(row,colum){
 int main(void){
   playboard();
   print();
-  while(k <8){
-    input();
-  }
+  input();
+
 
   return 0;
 
