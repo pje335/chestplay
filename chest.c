@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int board[8][8],a=0,x,y,row,colum;
+int board[8][8],a=0,x,y,row,colum,k=0;
 char q;
 
 /*making a new clean*/
@@ -24,7 +24,7 @@ void print(){
       }
 }
 
-
+/*Placing a 1 for the chosen positon and plpacing 5 for all invalid places*/
 void placement(row,colum){
 
       board[row][colum] = 1;
@@ -38,6 +38,13 @@ void placement(row,colum){
       board[x][colum] = 5;
     }
   }
+
+  for(x=0; x<8;x++){
+    if(board[x][x] != 1){
+      board[x][x] = 5;
+    }
+  }
+
   print();
 }
 
@@ -66,6 +73,7 @@ void placement(row,colum){
       input();
     }
     else{
+
       placement(row,colum);
     }
 
@@ -80,21 +88,9 @@ void placement(row,colum){
 int main(void){
   playboard();
   print();
-  while(a == 0){
-    a = 1;
-    printf("Do you want to contiunu? (Y/N):" );
-    scanf("%c",&q );
-    printf("\n" );
-    if (q == 'N' || q == 'n'  ){
-      a = 1;
-      printf("PROGRAM STOPPING\n" );
-    }
-    else if(q == 'Y' || q == 'y'  ) {
-      a = 0;
-      input();
-    }
-
-    }
+  while(k <8){
+    input();
+  }
 
   return 0;
 
