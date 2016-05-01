@@ -82,7 +82,7 @@ int main(void){
   print();
 
   while(a<1){
-    a++ ;
+    a = 5;
     printf("DO YOU WANT TO continue? (Y/N):" );
     scanf("%c",&q );
     if (q == 'N' || q == 'n'){
