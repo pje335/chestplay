@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int board[8][8],a=0,x,y,row,colum,k=0;
-char q;
+char stop='j';
 
 /*making a new clean*/
 void playboard(){
@@ -81,18 +81,10 @@ int main(void){
   playboard();
   print();
 
-  while(a<1){
-    a = 5;
-    printf("DO YOU WANT TO continue? (Y/N):" );
-    scanf("%c",&q );
-    if (q == 'N' || q == 'n'){
-      a = 1;
-      printf("STOPPING\n");
-    }
-    else if(q == 'Y' || q == 'y'){
-      a = 0;
-      printf("AAAAA\n");
-    }
+while(stop != 'n' && stop != 'N'){
+  printf("DO YOU WANT TO continue? (Y/N): \n" );
+  scanf("%c",&stop );
+  printf("AAAA\n" );
 
   }
 
